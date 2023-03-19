@@ -67,6 +67,7 @@ button:hover {background-color: var(--clr-color-dark)}
 #tris {
     color: var(--clr-color);
     margin-top: 20px;
+    text-align: center;
     font-family: ka;
     font-size: 40px;
 }
