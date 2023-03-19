@@ -1,0 +1,36 @@
+/* ///////////////  TIC TAC TOE CSS   ///////////////////////// */
+
+@font-face {
+    font-family: ka;
+    src: url(../font/ka1.ttf);
+  }
+
+:root {
+    
+    --clr-main: #2b2d47;
+    --clr-background: #4F5274;
+    --clr-color: #29cde0;
+    --clr-white: #f7f1f1;
+
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--clr-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
