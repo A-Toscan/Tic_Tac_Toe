@@ -23,6 +23,7 @@ In the second part, JavaScript will be added.
 ### Prerequisites
 
 The functional requirements are as follows:
+
 RF1 - The user must be able to start a new game by entering their
 name and choosing the game mode (human vs human or human vs machine).
 
@@ -36,10 +37,25 @@ remaining counters.
 RF4 - Each player can have a maximum of three pieces in play.
 
 
+Example of the starting page:
 
+<img src="screenshots/start.jpg" alt="starting page">
 
-<img src="screenshot/start.jpg">
+example of the player vs player inputs
 
+<img src="screenshots/input.jpg" alt="player vs player input">
+
+example of player vs bot input
+
+<img src="screenshots/bot.jpg" alt="player vs bot input">
+
+main board game
+
+<img src="screenshots/game.jpg" alt="main board game">
+
+example of the winner box
+
+<img src="screenshots/winner.jpg" alt="winner box">
 
 ### Installing
 
