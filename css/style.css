@@ -34,3 +34,67 @@ body {
 }
 
 
+
+/* ///////////////// CSS INDEX   ////////////////////////// */
+
+
+
+#logo {
+    width: 80px;
+    height: 80px;
+}
+
+.logo-box {
+    margin: auto;
+}
+
+.container, .container-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#user-icon {
+    width: 40px;
+    height: 40px;
+}
+
+#tris {
+    color: var(--clr-color);
+    margin-top: 20px;
+    font-family: ka;
+    font-size: 40px;
+}
+
+.box-players  {
+    width: 500px;
+    height: 400px;
+    background: linear-gradient(to bottom, #2b2d47 10%, #181926);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: (1, 1fr);
+}
+
+button {
+    background-color: var(--clr-color);
+    color: var(--clr-white);
+    height: 50px;
+    width: 250px;
+    border: 1px solid var(--clr-color);
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-white);
+    font-family: ka;
+}
