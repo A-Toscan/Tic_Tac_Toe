@@ -146,3 +146,126 @@ input {
     height: 35px;
 }
 
+
+/* /////////////////////////  CSS GAME   /////////////////////////////// */
+
+
+.game-container {
+    height: auto;
+    width: auto;
+    background: linear-gradient(to bottom, #2b2d47 10%, #181926);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: inset 1px 2px 0px rgb(255, 255, 255 / 18%), inset -2px -2px 2px rgb(0 0 0 / 65%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#O-Turn, #X-Turn {
+   margin: auto;
+   margin-top: 15px;
+}
+
+.turn-img {
+    width: 40px;
+    height: 40px;
+}  
+
+.mainPage {
+    height: 650px;
+    width: 350px;
+    padding: 20px;
+    position: relative;
+}
+
+.mainPage .headerBtns {
+    height: 60px;
+    width: 310px;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%) , -2px -2px 5px rgb(0 0 0 /87%);
+}
+
+
+.mainPage .headerBtns button {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    width: 160px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: var(--clr-white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.60);
+}
+
+
+.mainPage .headerBtns #O-Turn  {
+    text-align: center;
+    left: 160px;
+    z-index: 3;
+}  
+
+.showChange {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 160px;
+    border-radius: 50px;
+    background-color: var(--clr-color);
+    z-index: 1;
+    transition: 0.2s;
+}
+
+.info {
+    position: relative;
+    top: 25px;
+    margin: auto;
+    width: 320px;
+    height: 100px;
+    background-color: var(--clr-main);
+    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%) , -2px -2px 5px rgb(0 0 0 /87%);
+    border-radius: 15px;
+    color: var(--clr-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 40px;
+}
+
+#gameBoard {
+    margin-top: 80px;
+    height: 400px;
+    width: 330px;
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 15px;
+    
+}
+
+.boxes {
+    height: 100px;
+    width: 100px;
+    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%), -2px -2px 5px rgb(0 0 0 /87%);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.boxes i {
+    font-size: 60px;
+    color: var(--clr-color);
+}
+
