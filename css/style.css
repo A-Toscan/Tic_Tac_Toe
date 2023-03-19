@@ -9,6 +9,7 @@
     
     --clr-main: #2b2d47;
     --clr-background: #4F5274;
+    --clr-color-dark: #0f9baa;
     --clr-color: #29cde0;
     --clr-white: #f7f1f1;
 
@@ -33,6 +34,7 @@ body {
     position: relative;
 }
 
+button:hover {background-color: var(--clr-color-dark)}
 
 
 /* ///////////////// CSS INDEX   ////////////////////////// */
