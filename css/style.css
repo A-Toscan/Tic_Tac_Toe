@@ -98,3 +98,51 @@ a {
     color: var(--clr-white);
     font-family: ka;
 }
+
+
+/* /////////////////////////  CSS INPUT AND BOT  //////////////////////////////// */
+
+
+
+.input-cont {
+    width: 400px;
+    height: 300px;
+    background: linear-gradient(to bottom, #2b2d47 10%, #181926);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    background-color: var(--clr-white);
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.input-grid-2 {
+ margin-top: 40px;
+ margin-bottom: 30px;
+}
+
+#user-icon {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 35px;
+    height: 35px;
+}
+
+#bot-icon {
+    margin-left: 8px;
+    width: 35px;
+    height: 35px;
+}
+
