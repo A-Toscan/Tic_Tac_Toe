@@ -77,4 +77,28 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Usage <a name = "usage"></a>
 
-Add notes about how to use the system.
+Classic Tic Tac Toe game. 
+Choose whether to play against an opponent or the Bot,
+enter your name and start playing. Touching the squares will mark X (in the case of a second player O). 
+You only have three moves each.
+
+
+## Built with:
+
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+
+## License <a name = "usage"></a>
+
+Project for the GeeksHubs Full Stack Bootcamp 2023
+
+Author: Antonio Toscano
+
+## Contact:
+
+<a href = "mailto:eltoscan@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+
+<a href="https://www.linkedin.com/in/antonio-toscano-hd/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
