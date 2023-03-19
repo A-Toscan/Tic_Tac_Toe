@@ -5,7 +5,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
+- [Contact](#contact)
 
 ## About <a name = "about"></a>
 
@@ -59,21 +59,12 @@ example of the winner box
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+I initially created several HTML pages concatenated together.
+The Index with the Input pages, then I created the central part of the board, and finally the Winner pop-up.
 
-Say what the step will be
+Through the use of CSS I modelled the layout.
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
+I've installed a specific font called KA1, I used some icons for Vector Icons page.
 
 ## Usage <a name = "usage"></a>
 
