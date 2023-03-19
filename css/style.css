@@ -153,6 +153,10 @@ input {
     font-family: ka;
 }
 
+#bot-button, #winner-button {
+    font-family: ka;
+}
+
 /* /////////////////////////  CSS GAME   /////////////////////////////// */
 
 
