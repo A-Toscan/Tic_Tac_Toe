@@ -9,19 +9,37 @@
 
 ## About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+The aim of this project is to create a program that allows us to play tic-tac-toe against a human opponent or against a machine.
+tic-tac-toe against a human opponent or against the machine.
+
+Check the demo <a href="https://a-toscan.github.io/Tic_Tac_Toe/">here</a>
 
 ## Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+For this first part of the project, only the graphic part of the CSS layout is required.
+
+In the second part, JavaScript will be added.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+The functional requirements are as follows:
+RF1 - The user must be able to start a new game by entering their
+name and choosing the game mode (human vs human or human vs machine).
 
-```
-Give examples
-```
+RF2 - When starting a new game a 3x3 board will be created with the default values.
+default values.
+
+RF3 - When starting a new game a side panel will be created with the
+player information (whose turn it is to move and how many pieces they have left).
+remaining counters.
+
+RF4 - Each player can have a maximum of three pieces in play.
+
+
+
+
+<img src="screenshot/start.jpg">
+
 
 ### Installing
 
