@@ -43,7 +43,7 @@ Example of the starting page:
 
 example of the player vs player inputs
 
-<img src="screenshots/input.jpg" alt="player vs player input">
+<img src="screenshots/input.JPG" alt="player vs player input">
 
 example of player vs bot input
 
