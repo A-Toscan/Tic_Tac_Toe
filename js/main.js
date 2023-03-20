@@ -1,38 +1,129 @@
-/* 
-Starting the Java Script animation
-*/
+//X => <i class="fas fa-times"></i>
+//O => <i class="fas fa-circle-notch"></i>
 
-// Board Game marks
+// Selecting All "Starting Page" Tags
+let startingPage = document.querySelector("#startingPage");
+let choose = document.querySelectorAll(".choose");
 
-const htmlBoxes = document.querySelectorAll(".boxes");
-const mapBoxes = [];
+// Selecting All "Main Page" Tags
+let mainPage = document.querySelector("#mainPage");
+let showChange = document.querySelector("#showChange");
+let boxes = document.querySelectorAll(".boxes");
 
-let turno1 = false;
+// Selecting All "Winner Page" Tags
+let winner = document.querySelector("#winner");
+let winnerName = document.querySelector("#winnerName");
+let quit = document.querySelector("#quit");
 
-const manageClick = (element) => {
-  console.log(element.innerHTML);
+// How Can We Change Turns
+// False => X's Turn
+// True => O's Turn
+let changeTurn = null;
 
-  if ((element.innerHTML = " ")) {
-    if (turno1) {
-      element.innerHTML = `<img src="img/O.png">`;
-    } else {
-      element.innerHTML = `<img src="img/X.png">`;
+
+// Select Which You Want To Be>
+// X or O
+choose.forEach(chooseNow => {
+    chooseNow.addEventListener("click", () => {
+        if (chooseNow.id === "player human") {
+            changeTurn = false;
+            // console.log(changeTurn);
+            showChange.style.left = `0px`;
+        } else {
+            changeTurn = true;
+            // console.log(changeTurn);
+            showChange.style.left = `160px`;
+        }
+        startingPage.style.display = "none";
+        mainPage.style.display = "block";
+    })
+});
+
+boxes.forEach(items => {
+    items.addEventListener("click", () => {
+        // Add "X" Icon If "ChangeTurn" = False
+        // Add "O" Icon If "ChangeTurn" = True
+        if (changeTurn == false) {
+            items.innerHTML = `<img src="img/O.png">`;
+            items.id = "X";
+            items.style.pointerEvents = "none";
+            showChange.style.left = `160px`;
+
+            // change The "changeTurn" Value False Into True
+            changeTurn = true;
+        } else {
+            items.innerHTML = `<img src="img/X.png">`;
+            items.id = "O";
+            items.style.pointerEvents = "none";
+            showChange.style.left = `px`;
+
+            // change The "changeTurn" Value False Into True
+            changeTurn = false;
+        }
+        winningFunc();
+        drawFunc();
+    })
+})
+
+// All Possible Winning Combinations
+let winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+]
+
+let winningFunc = () => {
+    for (let a = 0; a <= 7; a++) {
+        let b = winningCombinations[a];
+        // console.log(b);
+
+        if (boxes[b[0]].id == "" || boxes[b[1]].id == "" || boxes[b[2]].id == "") {
+            continue;
+        } else if (boxes[b[0]].id == "X" && boxes[b[1]].id == "X" && boxes[b[2]].id == "X") {
+            // console.log("X is The Winner");
+
+            // Adding Winner text
+            winnerName.innerText = `Player X Win The Game!`;
+
+            // show "Winner Page" & Hide "Mai Page"
+            mainPage.style.display = "none";
+            winner.style.display = "block";
+        } else if (boxes[b[0]].id == "O" && boxes[b[1]].id == "O" && boxes[b[2]].id == "O") {
+            // console.log("O is The Winner");
+
+            // Adding Winner text
+            winnerName.innerText = `Player O Win The Game!`;
+
+            // show "Winner Page" & Hide "Mai Page"
+            mainPage.style.display = "none";
+            winner.style.display = "block";
+        } else {
+            continue;
+        }
     }
-    turno1 = !turno1;
-  }
-
-  manageTablero(htmlBoxes);
-};
-
-const manageTablero = (uiBoxes) => {
-  for (const c of uiBoxes) {
-    console.log(c.innerHTML);
-  }
-};
-
-for (let c of htmlBoxes) {
-  c.addEventListener("click", (event) => {
-    const element = event.target;
-    manageClick(element);
-  });
 }
+
+// Match Draw Function
+let drawFunc = () => {
+    if (boxes[0].id != "" && boxes[1].id != "" &&
+        boxes[2].id != "" && boxes[3].id != "" &&
+        boxes[4].id != "" && boxes[5].id != "" &&
+        boxes[6].id != "" && boxes[7].id != "" && boxes[8].id != "") {
+        // Adding "Draw" text
+        winnerName.innerText = `Match Draw!`;
+
+        // show "Winner Page" & Hide "Mai Page"
+        mainPage.style.display = "none";
+        winner.style.display = "block";
+    }
+}
+
+// Reset Game
+quit.addEventListener("click", () => {
+    window.location.reload();
+})
