@@ -39,15 +39,15 @@ RF4 - Each player can have a maximum of three pieces in play.
 
 Example of the starting page:
 
-<img src="../screenshots/start.jpg" alt="starting page">
+<img src="screenshots/start.JPG" alt="starting page">
 
 example of the player vs player inputs
 
-<img src="screenshots/input.jpg" alt="player vs player input">
+<img src="screenshots/input.JPG" alt="player vs player input">
 
 example of player vs bot input
 
-<img src="screenshots/bot.jpg" alt="player vs bot input">
+<img src="./screenshots/bot.jpg" alt="player vs bot input">
 
 main board game
 
