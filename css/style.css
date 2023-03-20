@@ -321,4 +321,12 @@ input {
 }
 
 
-////////////////////
+/* ////////////////////  MEDIA QUERIES   //////////////////////////// */
+
+
+@media only screen and (min-width: 600px) {
+    .game-container {
+        width: auto;
+        height: auto;
+    }
+}
