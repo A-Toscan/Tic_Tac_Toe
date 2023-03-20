@@ -51,11 +51,11 @@ example of player vs bot input
 
 main board game
 
-<img src="screenshots/game.jpg" alt="main board game">
+<img src="screenshots/game.JPG" alt="main board game">
 
 example of the winner box
 
-<img src="screenshots/winner.jpg" alt="winner box">
+<img src="screenshots/winner.JPG" alt="winner box">
 
 ### Installing
 
