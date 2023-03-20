@@ -47,7 +47,7 @@ example of the player vs player inputs
 
 example of player vs bot input
 
-<img src="./screenshots/bot.jpg" alt="player vs bot input">
+<img src="screenshots/bot.JPG" alt="player vs bot input">
 
 main board game
 
