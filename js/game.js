@@ -25,7 +25,7 @@ let changeTurn = null;
 // X or O
 choose.forEach(chooseNow => {
     chooseNow.addEventListener("click", () => {
-        if (chooseNow.id === "player human") {
+        if (chooseNow.id === "player_human") {
             changeTurn = false;
             // console.log(changeTurn);
             showChange.style.left = `0px`;
