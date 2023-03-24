@@ -34,7 +34,7 @@ const getBoardGameHTML = (game) => {
 
 
 
-<div id="gameBoard">
+<div id="GameBoard">
   <div class="boxes"></div>
   <div class="boxes"></div>
   <div class="boxes"></div>
