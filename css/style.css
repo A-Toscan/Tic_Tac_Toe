@@ -156,9 +156,9 @@ input {
     font-family: ka;
 }
 
-#bot-button {
+#bot-button, #player-button{
     font-family: ka;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 

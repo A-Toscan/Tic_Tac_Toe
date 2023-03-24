@@ -14,22 +14,100 @@
 </head>
 <body>
 
-<!-- PRESENTATION BOX -->
+ <!-- PRESENTATION BOX -->
 
-    <div class="container">
-        <div class="box-players">
-            <div class="logo-box">
-            <img  id="logo" src="img/logo.png" alt="logo">
-        </div>
-            <div class="player-1">
-                <a href="input.html"><button class="player human"><img src="img/player.png" id="user-icon"> VS <img src="img/player.png" id="user-icon" class="choose"></button></a>
-                <p id="tris">TIC TAC TOE</p>
-        </div>
-        <div class="player-2">
-            <a href="bot.html"><button class="player bot"><img src="img/player.png" id="user-icon"> VS <img src="img/robot.png" id="bot-icon" class="choose"></button></a>
-        </div>
-        </div>
+ <div id="container">
+    <div class="box-players">
+      <div class="logo-box">
+        <img id="logo" src="img/logo.png" alt="logo" />
+      </div>
+      <div class="player-1">
+        <button id="player_human">
+          <img src="img/player.png" id="user-icon" /> VS
+          <img src="img/player.png" id="user-icon" class="choose" />
+        </button>
+        <p id="tris">TIC TAC TOE</p>
+      </div>
+      <div class="player-2">
+        <button id="player_bot">
+          <img src="img/player.png" id="user-icon" /> VS
+          <img src="img/robot.png" id="bot-icon" class="choose" />
+        </button>
+      </div>
     </div>
-    <script src="js/main1.js"></script>
+
+    <!-- INTRODUCING PLAYERS SECTION -->
+
+    <div id="containerInput"></div>
+
+    <!-- BOT PLAYER SECTION -->
+
+    <div id="containerBot">
+    </div>
+
+    <!-- BAORD GAME SECTION -->
+
+    <div id="game-container">
+      <!-- <div class="mainPage">
+    <div class="headerBtns">
+      <div class="showChange">
+      <a href="winner.html"
+          ><button id="X-Turn">
+        <img src="img/player.png" alt="player" class="turn-img"
+        />
+      </button></a>
+      
+      <a href="winner.html"
+          ><button id="O-Turn">
+        <img src="img/bot.png" alt="bot" class="turn-img"
+        />
+      </button></a>
+    </div>
+      
+    </div>
+
+  
+  <div class="info">
+    <div class="points play1">III</div>
+    <div class="points play2">III</div>
+  </div>
+
+
+    
+
+
+
+    <div id="gameBoard">
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+    </div>
+  </div> -->
+    </div>
+
+    <!-- WINNER SECTION -->
+
+    <div id="winner-box">
+      <!-- <div class="winner">
+    <h2 class="winnerName">Bob Win The Game</h2>
+    <div class="button-player">
+        <a href="index.html"><button id="winner-button">Play Again</button></a>
+    </div>
+  </div> -->
+    </div>
+  </div>
+
+
+
+    <script src="js/main.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/winner.js"></script>
 </body>
 </html>

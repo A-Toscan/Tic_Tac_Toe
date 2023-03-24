@@ -1,129 +1,109 @@
-//X => <i class="fas fa-times"></i>
-//O => <i class="fas fa-circle-notch"></i>
+// Single Page Application
 
-// Selecting All "Starting Page" Tags
-let startingPage = document.querySelector("#startingPage");
-let choose = document.querySelectorAll(".choose");
+// definiciones
+const container = document.getElementById("container");
 
-// Selecting All "Main Page" Tags
-let mainPage = document.querySelector("#mainPage");
-let showChange = document.querySelector("#showChange");
-let boxes = document.querySelectorAll(".boxes");
-
-// Selecting All "Winner Page" Tags
-let winner = document.querySelector("#winner");
-let winnerName = document.querySelector("#winnerName");
-let quit = document.querySelector("#quit");
-
-// How Can We Change Turns
-// False => X's Turn
-// True => O's Turn
-let changeTurn = null;
-
-
-// Select Which You Want To Be>
-// X or O
-choose.forEach(chooseNow => {
-    chooseNow.addEventListener("click", () => {
-        if (chooseNow.id === "player human") {
-            changeTurn = false;
-            // console.log(changeTurn);
-            showChange.style.left = `0px`;
-        } else {
-            changeTurn = true;
-            // console.log(changeTurn);
-            showChange.style.left = `160px`;
-        }
-        startingPage.style.display = "none";
-        mainPage.style.display = "block";
-    })
+document.getElementById("player_human").addEventListener("click", () => {
+  renderStartGame();
+  setStartGameUiEventos();
 });
 
-boxes.forEach(items => {
-    items.addEventListener("click", () => {
-        // Add "X" Icon If "ChangeTurn" = False
-        // Add "O" Icon If "ChangeTurn" = True
-        if (changeTurn == false) {
-            items.innerHTML = `<img src="img/O.png">`;
-            items.id = "X";
-            items.style.pointerEvents = "none";
-            showChange.style.left = `160px`;
+// players
 
-            // change The "changeTurn" Value False Into True
-            changeTurn = true;
-        } else {
-            items.innerHTML = `<img src="img/X.png">`;
-            items.id = "O";
-            items.style.pointerEvents = "none";
-            showChange.style.left = `px`;
+const game = {
+  player1: {
+    name: null,
+    // mark: '<img src="mifigurita.png">',
+  },
 
-            // change The "changeTurn" Value False Into True
-            changeTurn = false;
-        }
-        winningFunc();
-        drawFunc();
-    })
-})
+  player2: {
+    name: null,
+    // mark: '<img src="mifigurita2.png">',
+  },
+  winner: null,
+  // image: '<img src="img/dumbledore-icon.jpg" class="img">',
+};
 
-// All Possible Winning Combinations
-let winningCombinations = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-]
+//Función de estructura HTML de la vista Principal
 
-let winningFunc = () => {
-    for (let a = 0; a <= 7; a++) {
-        let b = winningCombinations[a];
-        // console.log(b);
+const getStartGame = () => {
+  return `
+   <div class="input-cont">
+   <div class="input-grid">
+     <div class="input-grid-1">
+       <input type="text" placeholder="first player name" id="player1"/>
+     </div>
+     <div class="input-grid-2">
+       <input type="text" placeholder="second player name" id="player2"/>
+     </div>
+    
+   </div>
+   <button id="player-button">Start Playing</button>
+ </div>`;
+};
 
-        if (boxes[b[0]].id == "" || boxes[b[1]].id == "" || boxes[b[2]].id == "") {
-            continue;
-        } else if (boxes[b[0]].id == "X" && boxes[b[1]].id == "X" && boxes[b[2]].id == "X") {
-            // console.log("X is The Winner");
+//Función que coge el valor de los inputs
+const setStartGameUiEventos = () => {
+  document.getElementById("player-button").addEventListener("click", () => {
+    const name1Input = document.getElementById("player1").value;
+    const name2Input = document.getElementById("player2").value;
+    console.log("human");
+    //Validar
 
-            // Adding Winner text
-            winnerName.innerText = `Player X Win The Game!`;
+    //actualizar
+    game.player1.name = name1Input;
+    game.player2.name = name2Input;
 
-            // show "Winner Page" & Hide "Mai Page"
-            mainPage.style.display = "none";
-            winner.style.display = "block";
-        } else if (boxes[b[0]].id == "O" && boxes[b[1]].id == "O" && boxes[b[2]].id == "O") {
-            // console.log("O is The Winner");
+    //renderizar vista game
+    renderBoardGame();
+    setBoardGameUiEventos();
+  });
+};
 
-            // Adding Winner text
-            winnerName.innerText = `Player O Win The Game!`;
+//Función de estructura HTML Start
+const renderStartGame = () => {
+  container.innerHTML = getStartGame();
+};
 
-            // show "Winner Page" & Hide "Mai Page"
-            mainPage.style.display = "none";
-            winner.style.display = "block";
-        } else {
-            continue;
-        }
-    }
-}
 
-// Match Draw Function
-let drawFunc = () => {
-    if (boxes[0].id != "" && boxes[1].id != "" &&
-        boxes[2].id != "" && boxes[3].id != "" &&
-        boxes[4].id != "" && boxes[5].id != "" &&
-        boxes[6].id != "" && boxes[7].id != "" && boxes[8].id != "") {
-        // Adding "Draw" text
-        winnerName.innerText = `Match Draw!`;
 
-        // show "Winner Page" & Hide "Mai Page"
-        mainPage.style.display = "none";
-        winner.style.display = "block";
-    }
-}
 
-// Reset Game
-quit.addEventListener("click", () => {
-    window.location.reload();
-})
+
+// PLAYER VS BOT
+
+document.getElementById("player_bot").addEventListener("click", () => {
+  renderBotGame();
+  setBotGameUiEventos();
+});
+
+const getBotGame = () => {
+  return `
+      <div class="input-cont">
+         <div class="input-grid">
+          <div class="input-grid-1">
+             <p id="bot-title">PLAY AGAINST THE BOT</p>
+             <input type="text" placeholder="player name" id="player-bot />
+          </div>
+         </div>
+         <button id="bot-button">Start Playing</button>
+       </div>`;
+};
+
+const setBotGameUiEventos = () => {
+  document.getElementById("bot-button").addEventListener("click", () => {
+    const botNameInput = document.getElementById("player-bot").value;
+
+    console.log("bot");
+
+    // game.player-bot.name = botNameInput;
+
+    renderBoardGame();
+    setBoardGameUiEventos();
+  });
+};
+
+const renderBotGame = () => {
+  container.innerHTML = getBotGame();
+};
+
+
