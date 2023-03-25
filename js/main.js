@@ -58,7 +58,7 @@ const setStartGameUiEventos = () => {
     renderBoardGame();
     setBoardGameUiEventos();
 
-    
+    register();
   });
 };
 
@@ -66,15 +66,6 @@ const setStartGameUiEventos = () => {
 const renderStartGame = () => {
   container.innerHTML = getStartGame();
 };
-
-
-
-
-
-
-
-
-
 
 // PLAYER VS BOT
 
@@ -110,6 +101,8 @@ const setBotGameUiEventos = () => {
     // integrando parte del juego
 
     markBoxes();
+    console.log("markBoxes call");
+    register();
   });
 };
 
