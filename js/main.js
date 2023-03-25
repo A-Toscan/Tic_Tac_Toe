@@ -57,6 +57,8 @@ const setStartGameUiEventos = () => {
     //renderizar vista game
     renderBoardGame();
     setBoardGameUiEventos();
+
+    
   });
 };
 
@@ -64,6 +66,11 @@ const setStartGameUiEventos = () => {
 const renderStartGame = () => {
   container.innerHTML = getStartGame();
 };
+
+
+
+
+
 
 
 
@@ -98,12 +105,14 @@ const setBotGameUiEventos = () => {
     // game.player-bot.name = botNameInput;
 
     renderBoardGame();
-    setBoardGameUiEventos();
+    // setBoardGameUiEventos();
+
+    // integrando parte del juego
+
+    markBoxes();
   });
 };
 
 const renderBotGame = () => {
   container.innerHTML = getBotGame();
 };
-
-

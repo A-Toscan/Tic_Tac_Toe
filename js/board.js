@@ -57,6 +57,9 @@ const getBoardGameHTML = (game) => {
 const renderBoardGame = () => {
  container.innerHTML = getBoardGameHTML(game);
 
+
+
+ 
 };
 
 const handleBoardGameClick = (e) => {
