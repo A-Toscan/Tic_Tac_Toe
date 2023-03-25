@@ -67,6 +67,7 @@ const renderStartGame = () => {
   container.innerHTML = getStartGame();
 };
 
+
 // PLAYER VS BOT
 
 document.getElementById("player_bot").addEventListener("click", () => {

@@ -3,7 +3,7 @@ let turno1 = false;
 const manageClick = (element) => {
   console.log(element.innerHTML);
 
-  const htmlBoxes = document.querySelectorAll(".boxes");
+  const htmlBoxes = document.querySelectorAll("boxes");
   const mapBoxes = [];
 
   if ((element.innerHTML = " ")) {
