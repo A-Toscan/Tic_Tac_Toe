@@ -19,7 +19,7 @@ const getBoardGameHTML = (game) => {
   
   <a href="winner.html"
       ><button id="O-Turn">
-    <img src="img/bot.png" alt="bot" class="turn-img"
+    <img src="img/player.png" alt="bot" class="turn-img"
     />
   </button></a>
 </div>
