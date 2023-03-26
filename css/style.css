@@ -50,7 +50,7 @@ button:hover {background-color: var(--clr-color-dark)}
     margin: auto;
 }
 
-.container, .container-input {
+#container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,6 +120,7 @@ a {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 input {
@@ -131,9 +132,10 @@ input {
     cursor: pointer;
 }
 
-.input-grid-2 {
+.input-grid-2, .input-grid-1 {
  margin-top: 30px;
  margin-bottom: 20px;
+ margin: auto;
 }
 
 #user-icon {

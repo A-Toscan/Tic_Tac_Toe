@@ -18,17 +18,7 @@ const manageClick = (element) => {
   manageGameBoard(htmlBoxes);
 };
 
-//   for (let b of htmlBoxes) {
-//     b.addEventListener("click", (event) => {
-//       const element = event.target;
-//       manageClick(element);
-//     });
-//   }
-
-//   const markBoxes = () => {}
-
 const register = () => {
-  console.log("adding addEventListener");
   const htmlBoxes = document.querySelectorAll(".boxes");
   for (let i = 0; i < htmlBoxes.length; i++) {
     htmlBoxes[i].addEventListener("click", (event) => {

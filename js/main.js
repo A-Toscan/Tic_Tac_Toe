@@ -57,7 +57,6 @@ const setStartGameUiEventos = () => {
     //renderizar vista game
     renderBoardGame();
     setBoardGameUiEventos();
-
     register();
   });
 };
@@ -66,7 +65,6 @@ const setStartGameUiEventos = () => {
 const renderStartGame = () => {
   container.innerHTML = getStartGame();
 };
-
 
 // PLAYER VS BOT
 
@@ -84,29 +82,29 @@ const getBotGame = () => {
              <input type="text" placeholder="player name" id="player-bot />
           </div>
          </div>
+       <div class="input-button-bot">
          <button id="bot-button">Start Playing</button>
+         </div>
        </div>`;
 };
 
 const setBotGameUiEventos = () => {
   document.getElementById("bot-button").addEventListener("click", () => {
-    const botNameInput = document.getElementById("player-bot").value;
+    const botNameInput = document.getElementById("player_bot").value;
 
     console.log("bot");
 
-    // game.player-bot.name = botNameInput;
 
     renderBoardGame();
-    // setBoardGameUiEventos();
-
-    // integrando parte del juego
-
     markBoxes();
-    console.log("markBoxes call");
     register();
+
+
+    
   });
 };
 
 const renderBotGame = () => {
   container.innerHTML = getBotGame();
 };
+
