@@ -94,7 +94,7 @@ const setBotGameUiEventos = () => {
     console.log("bot");
 
     renderBoardGame();
-    markBoxes();
+  
     register();
   });
 };
@@ -102,3 +102,5 @@ const setBotGameUiEventos = () => {
 const renderBotGame = () => {
   container.innerHTML = getBotGame();
 };
+
+markBoxes();
