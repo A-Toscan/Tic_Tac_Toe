@@ -90,21 +90,15 @@ const getBotGame = () => {
 
 const setBotGameUiEventos = () => {
   document.getElementById("bot-button").addEventListener("click", () => {
-    const botNameInput = document.getElementById("player_bot").value;
-
+    const botNameInput = document.getElementById("player_bot");
     console.log("bot");
-
 
     renderBoardGame();
     markBoxes();
     register();
-
-
-    
   });
 };
 
 const renderBotGame = () => {
   container.innerHTML = getBotGame();
 };
-
