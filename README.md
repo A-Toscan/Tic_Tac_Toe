@@ -66,12 +66,17 @@ Through the use of CSS I modelled the layout.
 
 I've installed a specific font called KA1, I used some icons for Vector Icons page.
 
+Second part of the project, using the method SPA, Single Page Application, I did delete all the HTML pages except Index.html, and integrated the html with Javascript.
+Different javascript pages have been created for each section of the game.
+
+Added also the movement on the board game with X and O.
+
 ## Usage <a name = "usage"></a>
 
 Classic Tic Tac Toe game. 
 Choose whether to play against an opponent or the Bot,
 enter your name and start playing. Touching the squares will mark X (in the case of a second player O). 
-You only have three moves each.
+
 
 
 ## Built with:
