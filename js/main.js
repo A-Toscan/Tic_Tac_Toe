@@ -88,24 +88,20 @@ const getBotGame = () => {
        </div>`;
 };
 
-
-
 const setBotGameUiEventos = () => {
   document.getElementById("bot-button").addEventListener("click", () => {
-    const botNameInput = document.getElementById("player_bot");
+    const botNameInput = document.getElementById("player-bot");
+    console.log("bot");
+    
 
    
-    console.log("bot");
 
     renderBoardGame();
-   
+
     register();
   });
 };
 
-
-
 const renderBotGame = () => {
   container.innerHTML = getBotGame();
 };
-
