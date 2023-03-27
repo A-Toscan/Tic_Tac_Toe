@@ -96,8 +96,7 @@ const getBotGame = () => {
 const setBotGameUiEventos = () => {
   document.getElementById("bot-button").addEventListener("click", () => {
     const namebot = document.getElementById("player-bot");
-    
-
+    game.playerbot.name = namebot;
     console.log("bot");
 
     renderBoardGame();

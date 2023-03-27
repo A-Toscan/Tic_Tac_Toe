@@ -41,9 +41,10 @@ Example of the starting page:
 
 <img src="screenshots/start.JPG" alt="starting page">
 
-example of the player vs player inputs
+example of the player vs player inputs (mobile first)
 
 <img src="screenshots/input.JPG" alt="player vs player input">
+<img src="screenshots/input2.JPG" alt="player vs player input">
 
 example of player vs bot input
 
@@ -51,7 +52,7 @@ example of player vs bot input
 
 main board game
 
-<img src="screenshots/game.JPG" alt="main board game">
+<img src="screenshots/gamemobile.JPG" alt="main board game mobile">
 
 example of the winner box
 
