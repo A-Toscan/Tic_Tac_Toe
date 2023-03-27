@@ -20,6 +20,11 @@ const game = {
     name: null,
     // mark: '<img src="mifigurita2.png">',
   },
+
+  playerbot: {
+    name: null,
+  },
+
   winner: null,
   // image: '<img src="img/dumbledore-icon.jpg" class="img">',
 };
@@ -90,11 +95,10 @@ const getBotGame = () => {
 
 const setBotGameUiEventos = () => {
   document.getElementById("bot-button").addEventListener("click", () => {
-    const botNameInput = document.getElementById("player-bot");
-    console.log("bot");
+    const namebot = document.getElementById("player-bot");
     
 
-   
+    console.log("bot");
 
     renderBoardGame();
 
