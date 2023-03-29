@@ -13,7 +13,7 @@ document.getElementById("player_human").addEventListener("click", () => {
 const game = {
   player1: {
     name: null,
-    // mark: '<img src="mifigurita.png">',
+    mark: '<img src="mifigurita.png">',
   },
 
   player2: {
