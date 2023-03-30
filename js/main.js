@@ -18,7 +18,7 @@ const game = {
 
   player2: {
     name: null,
-    // mark: '<img src="mifigurita2.png">',
+    
   },
 
   playerbot: {
@@ -26,7 +26,7 @@ const game = {
   },
 
   winner: null,
-  // image: '<img src="img/dumbledore-icon.jpg" class="img">',
+  
 };
 
 //Función de estructura HTML de la vista Principal
@@ -61,7 +61,7 @@ const setStartGameUiEventos = () => {
 
     //renderizar vista game
     renderBoardGame();
-    setBoardGameUiEventos();
+    
     register();
   });
 };

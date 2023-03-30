@@ -53,7 +53,8 @@ const renderBoardGame = () => {
 };
 
 const handleBoardGameClick = (e) => {
-  console.log(e.currentTarget);
+  console.log("handleBoardGameClick");
+  console.log(e.target.childNodes);
 
   let algo = 1;
   verifyBoardGame(algo);
@@ -63,23 +64,23 @@ const verifyBoardGame = (e) => {
   if (e == 1) {
     game.winner = game.player1.name;
     renderWinner();
-    setWinnerUiEventos();
+    
   } else {
     game.winner = game.player1.name;
     renderWinner();
-    setWinnerUiEventos();
+    
   }
 };
 
 // evento
 
-const setBoardGameUiEventos = () => {
-  const boxes = document.querySelectorAll(".boxes");
+// const setBoardGameUiEventos = () => {
+//   const boxes = document.querySelectorAll(".boxes");
 
-  for (const box of boxes) {
-    box.addEventListener("click", handleBoardGameClick);
-  }
-};
+//   for (const box of boxes) {
+//     box.addEventListener("click", handleBoardGameClick);
+//   }
+// };
 
 //  GAME
 
@@ -94,10 +95,10 @@ const manageClick = (element) => {
   console.log(isBoxEmpty(element.innerHTML));
   if (isBoxEmpty(element.innerHTML)) {
     if (turno1) {
-      element.innerHTML = '<img src="img/O.png">';
+      element.innerHTML = '<img src="img/O.png" class="o">';
       playerName = game.player1.name;
     } else {
-      element.innerHTML = '<img src="img/X.png">';
+      element.innerHTML = '<img src="img/X.png" class="x">';
       playerName = game.player2.name;
     }
     turno1 = !turno1;
@@ -107,11 +108,11 @@ const manageClick = (element) => {
 };
 
 const register = () => {
-  const htmlBoxes = document.querySelectorAll(".boxes");
-  for (let i = 0; i < htmlBoxes.length; i++) {
-    htmlBoxes[i].addEventListener("click", (event) => {
-      const element = event.target;
-      manageClick(element);
-    });
-  }
-};
+  const boxes = document.querySelectorAll(".boxes");
+  for (const box of boxes) {
+      box.addEventListener("click", (event) => {
+        const element = event.target;
+        manageClick(element);
+      });
+    }
+  };
