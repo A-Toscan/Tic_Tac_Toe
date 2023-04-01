@@ -25,7 +25,7 @@ In the second part, JavaScript will be added.
 The functional requirements are as follows:
 
 RF1 - The user must be able to start a new game by entering their
-name and choosing the game mode (human vs human or human vs machine).
+name and choosing the game mode (human vs human).
 
 RF2 - When starting a new game a 3x3 board will be created with the default values.
 default values.
@@ -71,6 +71,8 @@ Second part of the project, using the method SPA, Single Page Application, I did
 Different javascript pages have been created for each section of the game.
 
 Added also the movement on the board game with X and O.
+
+Finishing the project with the Winner section showing the Winner's name or the Draw section in case of no winning.
 
 ## Usage <a name = "usage"></a>
 
