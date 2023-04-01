@@ -123,6 +123,7 @@ const checkWinner = (playerMark, mapBoxes) => {
     const restartButton = document.getElementById("draw-button");
     restartButton.addEventListener("click", () => {
       renderIndex();
+      renderBoard();
     });
   }
 };

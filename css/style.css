@@ -163,12 +163,10 @@ input {
     font-family: ka;
 }
 
-#bot-button, #player-button{
+#bot-button, #start-player-button{
     font-family: ka;
     margin-top: 30px;
-    
 }
-
 
 
 /* /////////////////////////  CSS GAME   /////////////////////////////// */
@@ -237,19 +235,36 @@ input {
     z-index: 3;
 }  
 
-.showChange {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 60px;
-    width: 160px;
+.turns {
+    display: flex;
+    justify-content: center;
     border-radius: 50px;
-    background-color: var(--clr-color);
     z-index: 1;
     transition: 0.2s;
 }
 
-.info {
+#player2-icon {
+    width: 160px;
+    height: 60px;
+    border-radius: 50px;
+    float: right;
+}
+
+#player1-icon {
+    width: 160px;
+    height: 60px;
+    border-radius: 50px;
+    float: left;
+}
+
+.current-turn {
+    background-color: var(--clr-color);
+    width: 160px;
+    height: 60px;
+    border-radius: 50px;
+}
+
+#info {
     position: relative;
     top: 25px;
     margin: auto;
@@ -299,7 +314,7 @@ input {
 
 
 
-.winner-box {
+.winner-box, .draw-box {
     height: auto;
     width: auto;
     background: linear-gradient(to bottom, #2b2d47 10%, #181926);
@@ -311,7 +326,7 @@ input {
     text-align: center;
 }
 
-.winner .button-player {
+.winner .button-player, .draw  .button-player{
 
     height: auto;
     width: 100%;
@@ -320,7 +335,7 @@ input {
 
 }
 
-#winner-button {
+#winner-button, #draw-button {
     font-family: ka;
 }
 
