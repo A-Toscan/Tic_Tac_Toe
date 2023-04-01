@@ -101,10 +101,6 @@ const gameFunction = () => {
   let turno1 = true;
 
   const manageClick = (markBox, index) => {
-    // const uiTurno1 = document.getElementById("X-Turn");
-    // const uiTurno2 = document.getElementById("O-Turn");
-    // const player1_turn = document.getElementById("player1_turn");
-    // const player2_turn = document.getElementById("player2_turn");
     const player1Icon = document.getElementById("player1-icon");
     const player2Icon = document.getElementById("player2-icon");
 
