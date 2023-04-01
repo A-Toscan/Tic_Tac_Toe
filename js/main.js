@@ -3,108 +3,52 @@
 // definiciones
 const container = document.getElementById("container");
 
-document.getElementById("player_human").addEventListener("click", () => {
-  renderStartGame();
-  setStartGameUiEventos();
-});
-
+const board = {
+  boxes: ["", "", "", "", "", "", "", "", ""],
+};
 // players
 
-const game = {
+const playersBtn = {
   player1: {
     name: null,
-    mark: '<img src="mifigurita.png">',
+    mark: '<img src="./img/X.png" alt="X" id="X">',
   },
 
   player2: {
     name: null,
-    
-  },
-
-  playerbot: {
-    name: null,
+    mark: '<img src="./img/O.png" alt="O" id="O">',
   },
 
   winner: null,
-  
 };
 
-//Función de estructura HTML de la vista Principal
+//Función de estructura HTML de la Pagina Principal
 
-const getStartGame = () => {
+const uiIndex = () => {
   return `
-   <div class="input-cont">
-   <div class="input-grid">
-     <div class="input-grid-1">
-       <input type="text" placeholder="first player name" id="player1"/>
-     </div>
-     <div class="input-grid-2">
-       <input type="text" placeholder="second player name" id="player2"/>
-     </div>
-    
-   </div>
-   <button id="player-button">Start Playing</button>
- </div>`;
+ <div class="box-players">
+      <div class="logo-box">
+        <img id="logo" src="img/logo.png" alt="logo" />
+      </div>
+      <div class="player-1">
+        <button id="player_vs_player">
+          <img src="img/player.png" id="user-icon" /> VS
+          <img src="img/player.png" id="user-icon" class="choose" />
+        </button>
+        <p id="tris">TIC TAC TOE</p>
+      </div>
+      <div class="player-2">
+        <button id="player_vs_bot">
+          <img src="img/player.png" id="user-icon" /> VS
+          <img src="img/robot.png" id="bot-icon" class="choose" />
+        </button>
+      </div>
+    </div>
+ `;
 };
 
-//Función que coge el valor de los inputs
-const setStartGameUiEventos = () => {
-  document.getElementById("player-button").addEventListener("click", () => {
-    const name1Input = document.getElementById("player1").value;
-    const name2Input = document.getElementById("player2").value;
-    console.log("human");
-    //Validar
-
-    //actualizar
-    game.player1.name = name1Input;
-    game.player2.name = name2Input;
-
-    //renderizar vista game
-    renderBoardGame();
-    
-    register();
-  });
+const renderIndex = () => {
+  container.innerHTML = uiIndex();
 };
 
-//Función de estructura HTML Start
-const renderStartGame = () => {
-  container.innerHTML = getStartGame();
-};
-
-// PLAYER VS BOT
-
-document.getElementById("player_bot").addEventListener("click", () => {
-  renderBotGame();
-  setBotGameUiEventos();
-});
-
-const getBotGame = () => {
-  return `
-      <div class="input-cont">
-         <div class="input-grid">
-          <div class="input-grid-1">
-             <p id="bot-title">PLAY AGAINST THE BOT</p>
-             <input type="text" placeholder="player name" id="player-bot />
-          </div>
-         </div>
-       <div class="input-button-bot">
-         <button id="bot-button">Start Playing</button>
-         </div>
-       </div>`;
-};
-
-const setBotGameUiEventos = () => {
-  document.getElementById("bot-button").addEventListener("click", () => {
-    const namebot = document.getElementById("player-bot");
-    game.playerbot.name = namebot;
-    console.log("bot");
-
-    renderBoardGame();
-
-    register();
-  });
-};
-
-const renderBotGame = () => {
-  container.innerHTML = getBotGame();
-};
+renderIndex();

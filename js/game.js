@@ -1,118 +1,154 @@
-// BOARD GAME
+//  Player VS Player Input page
 
-//Función que construyo la estructura HTML de la vista Game
-const getBoardGameHTML = (game) => {
+const uiPlayersInput = () => {
   return `
-  <div class="game-container">
-<div class="mainPage">
-<div class="headerBtns">
-  <div class="showChange">
-  <a href="winner.html"
-      ><button id="X-Turn">
-    <img src="img/player.png" alt="player" class="turn-img"
-    />
-  </button></a>
-  
-  <a href="winner.html"
-      ><button id="O-Turn">
-    <img src="img/player.png" alt="bot" class="turn-img"
-    />
-  </button></a>
-</div>
-  
-</div>
-
-
-<div class="info">
-<div class="points play1">${game.player1.name}</div>
-<div class="points play2">${game.player2.name}</div>
-</div>
-
-
-
-<div id="GameBoard">
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-  <div class="boxes"></div>
-</div>
-</div>
-</div>
-`;
-};
-
-//Función de estructura HTML Game
-
-const renderBoardGame = () => {
-  container.innerHTML = getBoardGameHTML(game);
-};
-
-const handleBoardGameClick = (e) => {
-  console.log("handleBoardGameClick");
-  console.log(e.target.childNodes);
-
-  let algo = 1;
-  verifyBoardGame(algo);
-};
-
-const verifyBoardGame = (e) => {
-  if (e == 1) {
-    game.winner = game.player1.name;
-    renderWinner();
+   <div class="input-cont" id="input-container">
+   <div class="input-grid">
+     <div class="input-grid-1">
+       <input type="text" placeholder="first player name" id="player1"/>
+     </div>
+     <div class="input-grid-2">
+       <input type="text" placeholder="second player name" id="player2"/>
+     </div>
     
-  } else {
-    game.winner = game.player1.name;
-    renderWinner();
-    
-  }
+   </div>
+   <button id="start-player-button">Start Playing</button>
+ </div>
+
+ <!-- STARTING THE GAME BOARD -->
+
+
+ <div class="game-container" id="game-container" style="display:none">
+ <div class="mainPage">
+ <div class="headerBtns">
+
+   <div class="turns" >
+   
+   <div class="current-turn" id="player1-icon">
+       <button id="X-Turn">
+     <img src="img/player.png" alt="player" class="player1_turn" id="player1_turn"
+     />
+   </button>
+   </div>
+
+
+   <div  id="player2-icon">
+       <button id="O-Turn">
+     <img src="img/player.png" alt="bot" class="player2_turn" id="player2_turn"
+     />
+   </button></div>
+ </div>
+   
+ </div>
+ 
+ 
+ <div id="info">
+ <div id="first-player-name"></div>
+ <div id="second-player-name"></div>
+ </div>
+ 
+ 
+ <div id="GameBoard" >
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+   <div class="boxes"></div>
+ </div>
+ </div>
+ </div>
+ `;
 };
 
-// evento
+///////////////////  Get Players name Structure    //////////////////////
 
-// const setBoardGameUiEventos = () => {
-//   const boxes = document.querySelectorAll(".boxes");
+const getPlayerNames = () => {
+  // Get names value
+  let namePlayer1 = document.getElementById("player1").value;
+  let namePlayer2 = document.getElementById("player2").value;
 
-//   for (const box of boxes) {
-//     box.addEventListener("click", handleBoardGameClick);
-//   }
-// };
-
-//  GAME
-
-let turno1 = false;
-const isBoxEmpty = (box) => {
-  return box == "";
-};
-const manageClick = (element) => {
-  const htmlBoxes = document.querySelectorAll(".boxes");
-  // const mapBoxes = [];
-
-  console.log(isBoxEmpty(element.innerHTML));
-  if (isBoxEmpty(element.innerHTML)) {
-    if (turno1) {
-      element.innerHTML = '<img src="img/O.png" class="o">';
-      playerName = game.player1.name;
-    } else {
-      element.innerHTML = '<img src="img/X.png" class="x">';
-      playerName = game.player2.name;
-    }
-    turno1 = !turno1;
-
-    checkWinner(playerName, htmlBoxes);
-  }
+  // Store values on game object
+  playersBtn.player1.name = namePlayer1;
+  playersBtn.player2.name = namePlayer2;
 };
 
-const register = () => {
-  const boxes = document.querySelectorAll(".boxes");
-  for (const box of boxes) {
-      box.addEventListener("click", (event) => {
-        const element = event.target;
-        manageClick(element);
-      });
+// RENDER PLAYER NAMES FUNCTION
+const renderPlayerNames = () => {
+  getPlayerNames();
+  const player1_turn = document.getElementById("first-player-name");
+  const player2_turn = document.getElementById("second-player-name");
+  const inputContainer = document.getElementById("input-container");
+
+  player1_turn.innerText = playersBtn.player1.name;
+  player2_turn.innerText = playersBtn.player2.name;
+
+  // Hide name input window to show the board
+  inputContainer.style.display = "none";
+
+  const gameContainer = document.getElementById("game-container");
+  gameContainer.style.display = "block";
+};
+
+//   GAME FUNCTIONALITY
+
+const gameFunction = () => {
+  const uiBoxes = document.querySelectorAll(".boxes");
+  const mapBoxes = [];
+  let turno1 = true;
+
+  const manageClick = (markBox, index) => {
+    // const uiTurno1 = document.getElementById("X-Turn");
+    // const uiTurno2 = document.getElementById("O-Turn");
+    // const player1_turn = document.getElementById("player1_turn");
+    // const player2_turn = document.getElementById("player2_turn");
+    const player1Icon = document.getElementById("player1-icon");
+    const player2Icon = document.getElementById("player2-icon");
+
+    if (markBox.innerHTML == "") {
+      if (turno1) {
+        markBox.innerHTML = playersBtn.player1.mark;
+        player1Icon.classList.add("current-turn");
+        player2Icon.classList.remove("current-turn");
+        board.boxes[index] = "X";
+      } else {
+        markBox.innerHTML = playersBtn.player2.mark;
+        player2Icon.classList.add("current-turn");
+        player1Icon.classList.remove("current-turn");
+        board.boxes[index] = "O";
+      }
+
+      turno1 = !turno1;
+
+      checkWinner(board.boxes[index], board.boxes);
     }
   };
+
+  for (let i = 0; i < uiBoxes.length; i++) {
+    uiBoxes[i].addEventListener("click", (event) => {
+      const boxTarget = event.target;
+      manageClick(boxTarget, i);
+    });
+  }
+};
+
+// RENDER BOARD FUNCTION
+const renderBoard = () => {
+  const buttonPlVsPl = document.getElementById("player_vs_player");
+  buttonPlVsPl.addEventListener("click", () => {
+    container.innerHTML = uiPlayersInput();
+
+    document
+      .getElementById("start-player-button")
+      .addEventListener("click", renderPlayerNames);
+
+    gameFunction();
+    board.boxes = ["", "", "", "", "", "", "", "", ""];
+  });
+};
+
+//  CALL TO RENDER BOARD FUNCTION
+renderBoard();
